@@ -84,7 +84,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Contact
 
-For inquiries or feedback, you can reach me at **i222711@nu.edu.pk**.
+For inquiries or feedback, you can reach me at **ahmadfarooq9123@gmail.com**.
 
 ## Acknowledgements
 
