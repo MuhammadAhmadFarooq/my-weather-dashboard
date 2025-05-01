@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-cloud-sun"></i>
+                Weather
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="table.html" class="active">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content" role="main">
+            <header>
+                <h1>Weather Data Table</h1>
+                <div class="unit-toggle">
+                    <label for="unit-switch">°C</label>
+                    <input type="checkbox" id="unit-switch">
+                    <label for="unit-switch">°F</label>
+
+                    <button id="clear-data">Clear Data</button>
+                </div>
+            </header>
+
+            <section id="data-table" class="section widget">
+                <h2>5-Day Temperature Forecast</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Condition</th>
+                            <th>Temperature</th>
+                            <th>Humidity</th>
+                            <th>Wind Speed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                       
+                    </tbody>
+                </table>
+                <div class="pagination" id="pagination">
+                   
+                </div>
+
+            </section>
+            <section id="filters" class="section widget">
+                <h2>Filters</h2>
+                <button id="sort-asc">Sort Temperatures (Ascending)</button>
+                <button id="sort-desc">Sort Temperatures (Descending)</button>
+                <button id="filter-rain">Show Rainy Days</button>
+                <button id="highest-temp">Show Highest Temperature</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbot-modal">
+        <div id="chatbot-header">Chatbot</div>
+        <div id="chatbot-messages" aria-live="polite"></div>
+        <input type="text" id="chatbot-input" placeholder="Ask about the weather...">
+        <button id="chatbot-send">Send</button>
+    </div>
+
+    <button id="chatbot-toggle">💬</button>
+
+    <script src="script.js" type="module"></script>
+    
+</body>
+</html>
+
+
