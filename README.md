@@ -11,7 +11,7 @@ Weather Dashboard is a responsive web application that provides real-time weathe
 
 ### Live URL
 
-[View the live Weather Dashboard](https://github.com/MuhammadAhmadFarooq/my-weather-dashboard.git)
+[View the live Weather Dashboard](https://muhammadahmadfarooq.github.io/my-weather-dashboard/)
 
 ## Features
 
